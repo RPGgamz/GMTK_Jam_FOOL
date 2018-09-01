@@ -17,10 +17,9 @@
     <sprite>sprites\spr_explosion</sprite>
     <sprite>sprites\spr_sphere</sprite>
     <sprite>sprites\spr_orb</sprite>
-    <sprite>sprites\sprite11</sprite>
-    <sprite>sprites\sprite12</sprite>
-    <sprite>sprites\sprite13</sprite>
-    <sprite>sprites\sprite14</sprite>
+    <sprite>sprites\spr_fool_down</sprite>
+    <sprite>sprites\spr_fool_side</sprite>
+    <sprite>sprites\spr_fool_up</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
