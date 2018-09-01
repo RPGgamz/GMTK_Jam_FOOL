@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>spd = 3;
+            <string>spd = 2;
 range = 15;
 </string>
           </argument>
@@ -49,16 +49,71 @@ range = 15;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Follow player and explode
-var Dx = obj_fool.x - x;
-if (Dx &lt; 0) image_xscale = -1;
-if (Dx &gt; 0) image_xscale = 1;
-
-dir = degtorad(point_direction(x, y, obj_fool.x, obj_fool.y));
-x += spd*cos(dir);
-y += -spd*sin(dir);
-
-if (point_distance(x, y, obj_fool.x, obj_fool.y) &lt; range) {
+            <string>///chase state
+if (sprite_index == spr_little) {
+    var Dx = obj_fool.x - x;
+    if (Dx &lt; 0) image_xscale = -1;
+    if (Dx &gt; 0) image_xscale = 1;
+    
+    dir = degtorad(point_direction(x, y, obj_fool.x, obj_fool.y));
+    x += spd*cos(dir);
+    y += -spd*sin(dir);
+    
+    if (point_distance(x, y, obj_fool.x, obj_fool.y) &lt; range) {
+        sprite_index = spr_little_jump;
+        image_index = 0;
+        image_speed = 1;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///jump state
+if (sprite_index = spr_little_jump) {
+    x += spd*cos(dir);
+    y += -spd*sin(dir);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///explode
+if (sprite_index == spr_little_jump) {
     instance_create(x, y, obj_explosion);
     instance_destroy();
 }

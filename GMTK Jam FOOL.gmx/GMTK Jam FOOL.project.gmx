@@ -13,6 +13,7 @@
     <sprite>sprites\spr_warrior_attack</sprite>
     <sprite>sprites\spr_warrior_walk</sprite>
     <sprite>sprites\spr_little</sprite>
+    <sprite>sprites\spr_little_jump</sprite>
     <sprite>sprites\spr_explosion</sprite>
     <sprite>sprites\spr_sphere</sprite>
     <sprite>sprites\spr_orb</sprite>
@@ -25,10 +26,10 @@
     <object>objects\obj_lifeform</object>
     <objects name="enemies">
       <object>objects\obj_warrior</object>
-      <object>objects\obj_explosion</object>
-      <object>objects\obj_orb</object>
       <object>objects\obj_little</object>
       <object>objects\obj_mage</object>
+      <object>objects\obj_explosion</object>
+      <object>objects\obj_orb</object>
     </objects>
   </objects>
   <rooms name="rooms">
