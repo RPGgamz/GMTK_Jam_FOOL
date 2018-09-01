@@ -20,6 +20,9 @@
     <sprite>sprites\spr_fool_down</sprite>
     <sprite>sprites\spr_fool_side</sprite>
     <sprite>sprites\spr_fool_up</sprite>
+    <sprite>sprites\spr_fool_jump_up</sprite>
+    <sprite>sprites\spr_fool_jump_down</sprite>
+    <sprite>sprites\spr_fool_jump_side</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
