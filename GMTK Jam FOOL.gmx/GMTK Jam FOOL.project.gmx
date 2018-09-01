@@ -23,6 +23,9 @@
     <sprite>sprites\spr_fool_jump_up</sprite>
     <sprite>sprites\spr_fool_jump_down</sprite>
     <sprite>sprites\spr_fool_jump_side</sprite>
+    <sprite>sprites\spr_warrior_attack____</sprite>
+    <sprite>sprites\spr_mage_orb_part_1</sprite>
+    <sprite>sprites\spr_mage_orb_part_2</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
