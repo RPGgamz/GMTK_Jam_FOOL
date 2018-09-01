@@ -6,13 +6,35 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\sprite0</sprite>
     <sprite>sprites\spr_mage</sprite>
-    <sprite>sprites\spr_warrior</sprite>
+    <sprite>sprites\sprite0</sprite>
+    <sprite>sprites\spr_mage_attack</sprite>
+    <sprite>sprites\spr_fool</sprite>
+    <sprite>sprites\spr_warrior_attack</sprite>
+    <sprite>sprites\spr_warrior_walk</sprite>
     <sprite>sprites\spr_little</sprite>
+    <sprite>sprites\spr_explosion</sprite>
+    <sprite>sprites\spr_sphere</sprite>
+    <sprite>sprites\spr_orb</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
+  <objects name="objects">
+    <object>objects\obj_fool</object>
+    <object>objects\obj_dmg</object>
+    <object>objects\obj_lifeform</object>
+    <objects name="enemies">
+      <object>objects\obj_warrior</object>
+      <object>objects\obj_explosion</object>
+      <object>objects\obj_orb</object>
+      <object>objects\obj_little</object>
+      <object>objects\obj_mage</object>
+    </objects>
+  </objects>
+  <rooms name="rooms">
+    <room>rooms\rm_anton</room>
+    <room>rooms\rm_init</room>
+  </rooms>
   <help>
     <rtf>help.rtf</rtf>
   </help>
