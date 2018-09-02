@@ -7,7 +7,6 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprites name="whatever by now">
-      <sprite>sprites\spr_fool</sprite>
       <sprite>sprites\sprite0</sprite>
       <sprite>sprites\spr_mage_orb_part_1</sprite>
       <sprite>sprites\spr_mage_orb_part_2</sprite>

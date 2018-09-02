@@ -26,16 +26,126 @@
           <argument>
             <kind>1</kind>
             <string>///init variables
+
 spd = 1;
-image_speed = 1/5
+img_spd_run = 1/5;
+img_spd_jump = 1/5;
+
+up = ord("W");
+down = ord("S");
+left = ord("A");
+right = ord("D");
+
+image_speed = img_spd_run
 dx = 0;
 dy = 0;
 x_pos = x;
 y_pos = y;
-
 state = "run";
 
 
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///animation matrices
+//jump up
+an_jump_up[0] = 0;
+an_jump_up[1] = 0;
+an_jump_up[2] = 0;
+an_jump_up[3] = 15;
+an_jump_up[4] = 10;
+an_jump_up[5] = 4;
+an_jump_up[6] = 3; 
+an_jump_up[7] = 0; 
+an_jump_up[8] = 0; 
+an_jump_up[9] = 0; 
+an_jump_up[10] = 0; 
+an_jump_up[11] = 0;
+
+//jump down
+an_jump_down[0] = 0;
+an_jump_down[1] = 0;
+an_jump_down[2] = 0;
+an_jump_down[3] = 14;
+an_jump_down[4] = 9;
+an_jump_down[5] = 7;
+an_jump_down[6] = 9; 
+an_jump_down[7] = 1; 
+an_jump_down[8] = 0; 
+an_jump_down[9] = 0; 
+an_jump_down[10] = 0; 
+an_jump_down[11] = 0;
+
+//jump side
+an_jump_side[0] = 0;
+an_jump_side[1] = 0;
+an_jump_side[2] = 0;
+an_jump_side[3] = 13;
+an_jump_side[4] = 8;
+an_jump_side[5] = 10;
+an_jump_side[6] = 8; 
+an_jump_side[7] = 2; 
+an_jump_side[8] = 0; 
+an_jump_side[9] = 0; 
+an_jump_side[10] = 0; 
+an_jump_side[11] = 0;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///animate jump
+if (state = "jump") {
+    switch (sprite_index) {
+        case spr_fool_jump_up:
+            var dd = an_jump_up[image_index]
+            break;
+        case spr_fool_jump_down:
+            var dd = an_jump_down[image_index]
+            break;
+        case spr_fool_jump_side:
+            var dd = an_jump_side[image_index]
+            break;
+    }
+    x_pos += dd*cos(dir);
+    y_pos += -dd*sin(dir);
+    if (image_index &lt; image_number) alarm[10] = 1/image_speed;
+}
 </string>
           </argument>
         </arguments>
@@ -58,12 +168,8 @@ state = "run";
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Movement
+            <string>///run
 if (state = "run") {
-    var up = ord("W");
-    var down = ord("S");
-    var left = ord("A");
-    var right = ord("D");
     if (keyboard_check_pressed(up)) {dy = -spd;}
     if (keyboard_check_pressed(down)) {dy = spd;}
     if (keyboard_check_pressed(left)) {dx = -spd;}
@@ -94,7 +200,6 @@ if (state = "run") {
         sprite_index = spr_fool_down;
     } //else sprite_index = spr_fool;
     
-    
     if (dx != 0 &amp;&amp; dy != 0) {
         var katete = spd*0.7;
         x_pos += katete*sign(dx);
@@ -104,15 +209,11 @@ if (state = "run") {
         y_pos += dy;
     }
     
-    x = round(x_pos);
-    y = round(y_pos);
 }
 </string>
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="9" enumb="32">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -129,8 +230,86 @@ if (state = "run") {
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (state = "run") {
-    
+            <string>///jump
+if (keyboard_check_pressed(vk_space)){
+    if (state = "run") {
+        state = "jump";
+        switch (sprite_index) {
+            case spr_fool_up:
+                sprite_index = spr_fool_jump_up;
+                break;
+            case spr_fool_down:
+                sprite_index = spr_fool_jump_down;
+                break;
+            case spr_fool_side:
+                sprite_index = spr_fool_jump_side;
+                break;
+        }
+        dir = degtorad(point_direction(0, 0, dx, dy));
+        image_speed = img_spd_jump;
+        image_index = 0;
+        alarm[10] = 1/image_speed;
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///movement
+
+x = round(x_pos);
+y = round(y_pos);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///run after jump
+if (state == "jump") {
+    state = "run"
+    if (sprite_index == spr_fool_jump_side) sprite_index = spr_fool_side;
+    else if (sprite_index == spr_fool_jump_up) sprite_index = spr_fool_up;
+    else sprite_index = spr_fool_down;
+    image_speed = img_spd_jump;
+    dx = 0;
+    dy = 0;
+    if (keyboard_check(up)) {dy = -spd;}
+    if (keyboard_check(down)) {dy = spd;}
+    if (keyboard_check(left)) {dx = -spd;}
+    if (keyboard_check(right)) {dx = spd;}
 }
 </string>
           </argument>

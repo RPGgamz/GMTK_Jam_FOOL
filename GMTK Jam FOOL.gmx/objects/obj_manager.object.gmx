@@ -176,6 +176,42 @@ if (keyboard_check_pressed(vk_f5)) {
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///camera
+if !(instance_exists(obj_fool)) {
+    exit;
+}
+
+var mx = mouse_x - view_xview - view_wview/2
+var my = mouse_y - view_yview - view_hview/2
+var angle = degtorad(point_direction(0, 0, mx, my));
+var md = point_distance(0, 0, mx, my);
+
+if (md &lt; 10) md = 0;
+
+view_xview = obj_fool.x - view_wview/2 + 3*(sqrt(md+1)-1)*cos(angle);
+view_yview = obj_fool.y - view_hview/2 - 3*(sqrt(md+1)-1)*sin(angle);
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
   </events>
   <PhysicsObject>0</PhysicsObject>
