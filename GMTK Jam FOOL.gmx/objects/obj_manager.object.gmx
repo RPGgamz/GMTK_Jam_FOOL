@@ -204,8 +204,8 @@ var md = point_distance(0, 0, mx, my);
 
 if (md &lt; 10) md = 0;
 
-view_xview = obj_fool.x - view_wview/2 + 3*(sqrt(md+1)-1)*cos(angle);
-view_yview = obj_fool.y - view_hview/2 - 3*(sqrt(md+1)-1)*sin(angle);
+view_xview = obj_fool.x - view_wview/2// + 3*(sqrt(md+1)-1)*cos(angle);
+view_yview = obj_fool.y - view_hview/2// - 3*(sqrt(md+1)-1)*sin(angle);
 
 
 </string>

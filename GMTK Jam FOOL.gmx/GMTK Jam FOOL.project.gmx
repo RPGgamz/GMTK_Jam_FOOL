@@ -30,10 +30,13 @@
     <sprite>sprites\spr_fool_jump_up</sprite>
     <sprite>sprites\spr_fool_jump_down</sprite>
     <sprite>sprites\spr_fool_jump_side</sprite>
+    <sprite>sprites\spr_laser</sprite>
+    <sprite>sprites\spr_fool_laser_side</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <objects name="objects">
+    <object>objects\obj_laser</object>
     <object>objects\obj_fool</object>
     <objects name="enemies">
       <object>objects\obj_warrior</object>
