@@ -107,6 +107,10 @@ instance_destroy(damage);
           <argument>
             <kind>1</kind>
             <string>///state chase
+if !(instance_exists(obj_fool)) {
+    exit;
+}
+
 if state = "chase" {
     var Dx = obj_fool.x - x;
     var follow_x = obj_fool.x - sign(Dx)*range //aim to stand NEXT TO the fool

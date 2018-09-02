@@ -79,6 +79,10 @@ image_index = 0;
           <argument>
             <kind>1</kind>
             <string>///face player
+if !(instance_exists(obj_fool)) {
+    exit;
+}
+
 var Dx = obj_fool.x - x;
 if (Dx &lt; 0) image_xscale = 1;
 if (Dx &gt; 0) image_xscale = -1;
@@ -106,13 +110,21 @@ if (Dx &gt; 0) image_xscale = -1;
           <argument>
             <kind>1</kind>
             <string>///state attack
+if !(instance_exists(obj_fool)) {
+    if (state == "attack") {
+        sprite_index = spr_mage;
+        state = "stand";
+    }
+    exit;
+}
+
 if (state == "attack") {
     var dir = degtorad(point_direction(x, y, obj_fool.x, obj_fool.y));
     orb = instance_create(x+10*cos(dir), y-10*sin(dir), obj_orb);
     orb.dir = dir
     state = "stand";
     alarm[0] = 60
-    sprite_index = "spr_mage";
+    sprite_index = spr_mage;
     image_index = 0;
     image_speed = 0;
 }

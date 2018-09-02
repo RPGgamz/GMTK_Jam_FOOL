@@ -50,6 +50,10 @@ range = 15;
           <argument>
             <kind>1</kind>
             <string>///chase state
+if !(instance_exists(obj_fool)) {
+    exit;
+}
+
 if (sprite_index == spr_little) {
     var Dx = obj_fool.x - x;
     if (Dx &lt; 0) image_xscale = -1;
