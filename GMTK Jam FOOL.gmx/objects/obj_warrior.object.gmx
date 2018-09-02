@@ -29,7 +29,7 @@
 range = 22;
 
 img_spd_walk = 1/8;
-img_spd_attack = 1/8;
+img_spd_attack = 1/4;
 image_index = random(image_number-1);
 
 image_speed = img_spd_walk;
@@ -148,7 +148,58 @@ if (state = "chase") {
     y += -an_walk[image_index]*sin(dir);
     
     alarm[10] = 1/image_speed; //animation
+    //stepping sound
+    if (round(image_index) == 3) {
+        alarm[2] = (1/image_speed)*0.375;
+        
+    }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>audio_play_sound(snd_swing, 1, false);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>audio_play_sound(snd_step_deep, 1, false);
 </string>
           </argument>
         </arguments>
@@ -247,6 +298,7 @@ if (state = "chase") {
         image_index = 0;
         alarm[10] = 2/image_speed //animation
         alarm[1] = 11/image_speed; //11 = billeder før hit
+        alarm[3] = 9/image_speed;
     }
 }
 </string>

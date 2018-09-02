@@ -4,7 +4,15 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_death</sound>
+    <sound>sound\snd_step_light</sound>
+    <sound>sound\snd_step_deep</sound>
+    <sound>sound\snd_swing</sound>
+    <sound>sound\snd_charge</sound>
+    <sound>sound\snd_wah_1</sound>
+    <sound>sound\snd_explosion</sound>
+  </sounds>
   <sprites name="sprites">
     <sprites name="whatever by now">
       <sprite>sprites\sprite0</sprite>
@@ -32,8 +40,13 @@
     <sprite>sprites\spr_fool_jump_side</sprite>
     <sprite>sprites\spr_laser</sprite>
     <sprite>sprites\spr_fool_laser_side</sprite>
+    <sprite>sprites\spr_teleporter</sprite>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\bg_level_1</background>
+    <background>background\bg_level_1_forest</background>
+    <background>background\bg_knight</background>
+  </backgrounds>
   <paths name="paths"/>
   <objects name="objects">
     <object>objects\obj_laser</object>
@@ -48,10 +61,11 @@
     <object>objects\obj_manager</object>
     <object>objects\obj_dmg</object>
     <object>objects\obj_lifeform</object>
+    <object>objects\obj_teleporter</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_init</room>
-    <room>rooms\rm_anton</room>
+    <room>rooms\rm_level_1</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

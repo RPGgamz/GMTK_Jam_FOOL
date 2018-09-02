@@ -52,6 +52,7 @@
 if (other.object_index = obj_orb) instance_destroy(other);
 instance_destroy();
 
+audio_play_sound(snd_death, 1, false);
 </string>
           </argument>
         </arguments>

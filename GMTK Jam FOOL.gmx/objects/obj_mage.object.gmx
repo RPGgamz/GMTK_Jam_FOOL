@@ -153,6 +153,9 @@ state = "attack";
 sprite_index = spr_mage_attack_1
 image_speed = img_spd_attack_1;
 image_index = 0;
+
+sound = audio_play_sound(snd_charge, 1, false);
+audio_sound_gain(sound, 1, 0);
 </string>
           </argument>
         </arguments>
@@ -222,6 +225,9 @@ if (state == "attack") {
         image_index = 0;
         alarm[1] = 1/image_speed +1;
         alarm[10] = 1;
+        
+        audio_sound_gain(sound, 0, 60*10);
+        //audio_play_sound(snd_ball_continue, 1, true);
     } else {
         state = "stand";
         alarm[0] = 60;
@@ -229,6 +235,7 @@ if (state == "attack") {
         image_index = 0;
         image_speed = img_spd_stand;
     }
+    
 }
 </string>
           </argument>

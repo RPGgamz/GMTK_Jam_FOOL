@@ -26,7 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>///calculating resolution and init. variables
-ideal_height = 180;
+ideal_height = 214;
+
 ideal_width = 0;
 
 aspect_ratio = display_get_width()/display_get_height();
@@ -79,6 +80,120 @@ display_reset(0, true)
 show_debug_message("ideal height: " + string(ideal_height));
 show_debug_message("ideal width: " + string(ideal_width));
 
+
+randomize();
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///end level var.
+alpha_fade = 0;
+faded = false;
+
+alpha_flash = 0;
+flash = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if !(faded) {
+    if (alpha_fade &lt; 1) {
+        alarm[2]++;
+        alpha_fade += .05;
+        if (alpha_fade == 1) {
+            room_goto_next();
+            faded = true;
+        }
+    }
+} else {
+    if (alpha_fade &gt; 0) {
+        alarm[2]++;
+        alpha_fade -= .01;
+        if (alpha_fade == 0) {
+            alarm[2] = -1;
+            faded = false;
+        }
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if !(flash) {
+    if (alpha_flash &lt; 1) {
+        alarm[1]++;
+        alpha_flash += .01;        
+    } if (alpha_flash = 1) {
+        alpha_flash = 1;
+        flash = true;
+    }
+} else {
+    if (instance_exists(obj_fool)) {
+        instance_destroy(obj_fool);
+    }
+    if (alpha_flash &gt; 0) {
+        alarm[1]++;
+        alpha_flash -= .01;
+    } if (alpha_flash = 0) {
+        alpha_flash = 0;
+        flash = false;
+        alarm[1] = -1;
+        alarm[2] = 1;
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -206,6 +321,72 @@ if (md &lt; 10) md = 0;
 
 view_xview = obj_fool.x - view_wview/2// + 3*(sqrt(md+1)-1)*cos(angle);
 view_yview = obj_fool.y - view_hview/2// - 3*(sqrt(md+1)-1)*sin(angle);
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="73">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (room == rm_level_1) {
+    draw_background(bg_level_1_forest, 0, 0);
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (alpha_flash &gt; 0) {
+    draw_set_alpha(alpha_flash);
+    draw_set_color(c_white);
+    draw_rectangle(0, 0, view_wview, view_hview, false);
+    
+    draw_set_alpha(1);
+}
+if (alpha_fade &gt; 0) {
+    draw_set_alpha(alpha_fade);
+    draw_set_color(c_black);
+    draw_rectangle(0, 0, view_wview, view_hview, false);
+    
+    draw_set_color(c_black);
+    draw_set_alpha(1);
+}
+
+
 
 
 </string>
