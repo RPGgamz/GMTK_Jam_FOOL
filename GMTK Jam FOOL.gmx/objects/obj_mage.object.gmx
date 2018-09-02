@@ -35,6 +35,7 @@ img_spd_attack_2 = 1/4;
 state = "stand"
 image_speed = img_spd_stand;
 alarm[0] = 60;
+attack_count = 0;
 </string>
           </argument>
         </arguments>
@@ -122,6 +123,7 @@ if (sprite_index == spr_mage_attack_2) {
 var dir = degtorad(point_direction(x, y, obj_fool.x, obj_fool.y));
 orb = instance_create(x+20*cos(dir), y-20*sin(dir), obj_orb);
 orb.dir = dir;
+attack_count += 1;
 </string>
           </argument>
         </arguments>
@@ -230,7 +232,11 @@ if (state == "attack") {
         //audio_play_sound(snd_ball_continue, 1, true);
     } else {
         state = "stand";
-        alarm[0] = 60;
+        alarm[0] = 30;
+        if (attack_count = 3) {
+            attack_count = 0;
+            alarm[0] = 60*4;
+        }
         sprite_index = spr_mage_walk;
         image_index = 0;
         image_speed = img_spd_stand;
