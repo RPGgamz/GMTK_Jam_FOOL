@@ -52,6 +52,8 @@
   </views>
   <instances>
     <instance objName="obj_fool" x="206" y="112" name="inst_9C981D61" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_warrior" x="71" y="121" name="inst_ECF0E75C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mage" x="116" y="89" name="inst_BD822C67" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
