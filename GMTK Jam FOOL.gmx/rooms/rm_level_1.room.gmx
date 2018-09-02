@@ -53,10 +53,10 @@
   <instances>
     <instance objName="obj_fool" x="195" y="186" name="inst_9C981D61" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_teleporter" x="319" y="180" name="inst_158A030C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_little" x="97" y="328" name="inst_FE736F7A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_little" x="121" y="27" name="inst_BA3EAEBE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_little" x="451" y="73" name="inst_51B7120E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_little" x="420" y="317" name="inst_FA805E05" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mage" x="97" y="328" name="inst_FE736F7A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mage" x="121" y="27" name="inst_BA3EAEBE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mage" x="451" y="73" name="inst_51B7120E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_mage" x="420" y="317" name="inst_FA805E05" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="bg_level_1" x="0" y="0" w="640" h="360" xo="0" yo="0" id="10000001" name="inst_2CA1601F" depth="1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

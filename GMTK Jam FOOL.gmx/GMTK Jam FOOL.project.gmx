@@ -53,10 +53,10 @@
     <object>objects\obj_fool</object>
     <objects name="enemies">
       <object>objects\obj_warrior</object>
-      <object>objects\obj_little</object>
+      <object>objects\obj_mage</object>
       <object>objects\obj_mage</object>
       <object>objects\obj_explosion</object>
-      <object>objects\obj_orb</object>
+      <object>objects\obj_manager</object>
     </objects>
     <object>objects\obj_manager</object>
     <object>objects\obj_dmg</object>
