@@ -7,18 +7,18 @@
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>1</bbox_left>
-  <bbox_right>11</bbox_right>
-  <bbox_top>1</bbox_top>
-  <bbox_bottom>25</bbox_bottom>
+  <bbox_left>2</bbox_left>
+  <bbox_right>12</bbox_right>
+  <bbox_top>7</bbox_top>
+  <bbox_bottom>32</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>13</width>
-  <height>76</height>
+  <width>15</width>
+  <height>34</height>
   <frames>
     <frame index="0">images\spr_fool_jump_down_0.png</frame>
     <frame index="1">images\spr_fool_jump_down_1.png</frame>
@@ -31,6 +31,5 @@
     <frame index="8">images\spr_fool_jump_down_8.png</frame>
     <frame index="9">images\spr_fool_jump_down_9.png</frame>
     <frame index="10">images\spr_fool_jump_down_10.png</frame>
-    <frame index="11">images\spr_fool_jump_down_11.png</frame>
   </frames>
 </sprite>

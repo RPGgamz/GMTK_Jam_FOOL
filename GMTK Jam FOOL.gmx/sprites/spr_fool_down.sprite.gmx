@@ -18,7 +18,7 @@
   </TextureGroups>
   <For3D>0</For3D>
   <width>9</width>
-  <height>20</height>
+  <height>21</height>
   <frames>
     <frame index="0">images\spr_fool_down_0.png</frame>
     <frame index="1">images\spr_fool_down_1.png</frame>
