@@ -11,6 +11,7 @@
       <sprite>sprites\sprite0</sprite>
       <sprite>sprites\spr_mage_orb_part_1</sprite>
       <sprite>sprites\spr_mage_orb_part_2</sprite>
+      <sprite>sprites\spr_orb</sprite>
     </sprites>
     <sprite>sprites\spr_mage</sprite>
     <sprite>sprites\spr_mage_attack</sprite>
@@ -21,7 +22,6 @@
     <sprite>sprites\spr_little_jump</sprite>
     <sprite>sprites\spr_explosion</sprite>
     <sprite>sprites\spr_sphere</sprite>
-    <sprite>sprites\spr_orb</sprite>
     <sprite>sprites\spr_fool_up</sprite>
     <sprite>sprites\spr_fool_down</sprite>
     <sprite>sprites\spr_fool_side</sprite>

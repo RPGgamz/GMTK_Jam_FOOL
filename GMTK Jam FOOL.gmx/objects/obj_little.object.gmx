@@ -26,11 +26,87 @@
           <argument>
             <kind>1</kind>
             <string>///init
-spd = 0.8;
-range = 15;
-image_speed = 1/10;
+spd = 0.7;
+image_speed = 1/7;
 
-jump_img_spd = 1/2;
+jump_img_spd = 1/3;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///animation matrices
+
+var jumping_power = 1;
+
+//jump
+an_jump[0] = 0;
+an_jump[1] = 0;
+an_jump[2] = 0;
+an_jump[3] = 0;
+an_jump[4] = 0;
+an_jump[5] = 4;
+an_jump[6] = 3; 
+an_jump[7] = 8; 
+an_jump[8] = 4; 
+an_jump[9] = 5; 
+an_jump[10] = 1; 
+an_jump[11] = 3; 
+an_jump[12] = 3;
+an_jump[13] = 1;
+an_jump[14] = 0;
+an_jump[15] = 0;
+
+range = 0;
+var i = 0;
+repeat (16) {
+    an_jump[i] = an_jump[i]*jumping_power
+    range += an_jump[i]
+    i++
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="10">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///animate jump
+if (sprite_index = spr_little_jump) {
+    x += an_jump[image_index]*cos(dir);
+    y += -an_jump[image_index]*sin(dir);
+    alarm[10] = 1/image_speed;
+}
 </string>
           </argument>
         </arguments>
@@ -71,6 +147,7 @@ if (sprite_index == spr_little_charge) {
         sprite_index = spr_little_jump;
         image_index = 0;
         image_speed = jump_img_spd;
+        alarm[10] = 1;
     }
 }
 </string>
@@ -94,9 +171,11 @@ if (sprite_index == spr_little_charge) {
           <argument>
             <kind>1</kind>
             <string>///jump state
-if (sprite_index = spr_little_jump) {
-    x += spd*cos(dir);
-    y += -spd*sin(dir);
+if (sprite_index == spr_little_jump) {
+    if (point_distance(x, y, obj_fool.x, obj_fool.y) &lt; sprite_get_width(spr_explosion)/4) {
+        //explode preemptively
+        image_index = image_number;
+    }
 }
 </string>
           </argument>

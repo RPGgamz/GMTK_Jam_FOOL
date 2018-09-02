@@ -57,8 +57,6 @@ alarm[10] = 1/image_speed
           <argument>
             <kind>1</kind>
             <string>///animation matrices
-//animation[frame,coordinate] for coordinates: 0=x and 1=y
-
 //attack
 an_attack[0] = 0;
 an_attack[1] = 2;
@@ -247,7 +245,7 @@ if (state = "chase") {
         sprite_index = spr_warrior_attack;
         image_speed = img_spd_attack;
         image_index = 0;
-        alarm[10] = 1/image_speed; //animation
+        alarm[10] = 1 //animation
         alarm[1] = 11/image_speed; //11 = billeder før hit
     }
 }
